@@ -1,8 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-auth.js";
 import app  from "./app.js"
 const auth = getAuth(app);
-sessionStorage.removeItem("email");
-sessionStorage.removeItem("uid");
 const btnRegister = document.getElementById("btnRegister");
 const emailField = document.getElementById("emailField");
 const passwordField = document.getElementById("passField");

@@ -41,20 +41,24 @@
         <input type="text" id="balanceInput" class="form-control my-4" value="">
         <br>
         <button type="button" class="btn btn-primary" id="btnUpdateBalance"> Update Balance </button>
-
-        <h1 class="mt-5">Book Tickets</h1>
-        <select class="form-select my-1" aria-label="From">
+        <form>
+          <h1 class="mt-5">Book Tickets</h1>
+          <select class="form-select my-1" aria-label="From" id="sourceSelect">
+            <option value="Kochi">Kochi</option>
+          <option value="Kannur">Kannur</option>
+          <option value="Kollam">Kollam</option>
+        </select>
+        <select class="form-select my-1" aria-label="Destination" id="destSelect">
           <option value="Kochi">Kochi</option>
           <option value="Kannur">Kannur</option>
           <option value="Kollam">Kollam</option>
         </select>
-        <select class="form-select my-1" aria-label="Destination">
-          <option value="Kochi">Kochi</option>
-          <option value="Kannur">Kannur</option>
-          <option value="Kollam">Kollam</option>
-        </select>
-        <input type="date" class="my-2" p-2 text-grey>
-
+        <input type="date" class="my-2 p-2 text-grey" id="dateSelect" >
+        <br>
+        <p id="errorTxt" class="text-error"></p>
+        <br>
+        <button type="button" class="btn btn-primary" id="btnBookTicket"> Book Ticket </button>
+      </form>
     </div>
 </body>
 </html>

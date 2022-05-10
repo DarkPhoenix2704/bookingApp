@@ -14,7 +14,7 @@ if(!userCred && window.location.pathname != "/login"){
     if (window.location.pathname === "/register") {
         console.log("Register Page");
     } else {
-        window.location.pathname = "/register";
+        //window.location.pathname = "/register";
     }
 }
 
