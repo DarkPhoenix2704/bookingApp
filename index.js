@@ -52,6 +52,12 @@ btnBookTicket.addEventListener("click", (event) => {
         person: Useruid
     }
     update(ref(database), tickets);
+    createQRCode({
+        date:date,
+        source:source,
+        dest:dest,
+        person:Useruid
+    })
 })
 
 function updateBalance(balance) {
@@ -59,10 +65,14 @@ function updateBalance(balance) {
     updates[`/users/${sessionStorage.getItem("uid")}/balance`] = parseInt(balance);
     update(ref(database), updates);
 }
-function getTickets() {
-    const ticketRef = ref(`/users/${Useruid}/tickets`);
-    onValue(ticketRef, (snapshot) => {
-        console.log(snapshot.val());
-    })
+
+function createQRCode(data) {
+    new QRCode(document.getElementById("qrcode"), {
+        text: JSON.stringify(data),
+        width: 128,
+        height: 128,
+        colorDark : "#5868bf",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
 }
-getTickets();
